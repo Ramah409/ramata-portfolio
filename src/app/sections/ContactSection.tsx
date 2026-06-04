@@ -8,7 +8,7 @@ import { Input } from '../components/ui/input';
 import { Label } from '../components/ui/label';
 import { Textarea } from '../components/ui/textarea';
 
-const formName = 'contact';
+const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xgobvwey';
 
 const infoCards = [
   {
@@ -89,9 +89,7 @@ export function ContactSection() {
     projectType: '',
     message: '',
   });
-  const [submitState, setSubmitState] = useState<
-    'idle' | 'sending' | 'success' | 'error' | 'local'
-  >('idle');
+  const [submitState, setSubmitState] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
 
   const handleChange = (
     e: React.ChangeEvent<
@@ -107,36 +105,19 @@ export function ContactSection() {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    const hostname = window.location.hostname;
-    const isLocalEnvironment =
-      hostname === 'localhost' ||
-      hostname === '127.0.0.1' ||
-      hostname === '0.0.0.0';
-
-    if (isLocalEnvironment) {
-      setSubmitState('local');
-      return;
-    }
-
     setSubmitState('sending');
 
     const submittedForm = e.currentTarget;
-    const rawFormData = new FormData(submittedForm);
-    const encodedFormData = new URLSearchParams();
-
-    rawFormData.forEach((value, key) => {
-      if (typeof value === 'string') {
-        encodedFormData.append(key, value);
-      }
-    });
+    const formPayload = new FormData(submittedForm);
+    formPayload.append('_subject', 'Nouveau message depuis le portfolio de Ramata');
 
     try {
-      const response = await fetch('/', {
+      const response = await fetch(FORMSPREE_ENDPOINT, {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/x-www-form-urlencoded',
+          Accept: 'application/json',
         },
-        body: encodedFormData.toString(),
+        body: formPayload,
       });
 
       if (!response.ok) {
@@ -205,16 +186,9 @@ export function ContactSection() {
               <div className="absolute -top-3 right-12 w-20 h-6 bg-[var(--portfolio-tape)] border border-[var(--portfolio-tape-border)] transform rotate-6" />
 
               <form
-                name={formName}
-                method="POST"
-                data-netlify="true"
-                netlify-honeypot="bot-field"
                 onSubmit={handleSubmit}
                 className="space-y-6"
               >
-                <input type="hidden" name="form-name" value={formName} />
-                <input type="hidden" name="bot-field" />
-
                 <div>
                   <Label htmlFor="name" className="text-black mb-2 block">
                     Nom
@@ -295,24 +269,13 @@ export function ContactSection() {
 
                 {submitState === 'success' && (
                   <p className="text-sm text-green-700">
-                    Message envoye. Tu pourras le retrouver dans les
-                    soumissions Netlify et dans tes notifications si elles sont
-                    activees.
+                    Message envoye. Tu le recevras directement sur ton e-mail.
                   </p>
                 )}
 
                 {submitState === 'error' && (
                   <p className="text-sm text-red-700">
-                    L'envoi a echoue. Verifie que le site est bien deploye sur
-                    Netlify puis reessaie.
-                  </p>
-                )}
-
-                {submitState === 'local' && (
-                  <p className="text-sm text-amber-700">
-                    Depuis `localhost`, Netlify ne peut pas recevoir la
-                    soumission. Le vrai envoi fonctionnera sur l'URL deployee du
-                    site.
+                    L'envoi a echoue. Reessaie dans quelques instants.
                   </p>
                 )}
               </form>
