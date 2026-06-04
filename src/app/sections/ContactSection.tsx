@@ -269,7 +269,7 @@ export function ContactSection() {
 
                 {submitState === 'success' && (
                   <p className="text-sm text-green-700">
-                    Message envoye. Tu le recevras directement sur ton e-mail.
+                    Merci, votre message a bien été envoyé.
                   </p>
                 )}
 
