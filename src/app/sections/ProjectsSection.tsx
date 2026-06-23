@@ -2,6 +2,7 @@ import { motion } from 'motion/react';
 import { useInView } from 'motion/react';
 import { useRef } from 'react';
 import { projects } from '../data/projects';
+import { trackEvent } from '../lib/analytics';
 
 interface ProjectsSectionProps {
   onProjectClick: (projectId: string) => void;
@@ -115,7 +116,13 @@ export function ProjectsSection({ onProjectClick }: ProjectsSectionProps) {
                           href={project.demoUrl}
                           target="_blank"
                           rel="noreferrer"
-                          onClick={(event) => event.stopPropagation()}
+                          onClick={(event) => {
+                            event.stopPropagation();
+                            trackEvent('project_demo_click', {
+                              project_id: project.id,
+                              project_title: project.title,
+                            });
+                          }}
                           className="px-3 py-2 bg-[var(--portfolio-accent-dark)] text-white text-sm border-2 border-black hover:bg-[var(--portfolio-accent)] hover:text-black transition-colors"
                         >
                           {project.demoLabel || 'Voir le projet'}
@@ -127,7 +134,13 @@ export function ProjectsSection({ onProjectClick }: ProjectsSectionProps) {
                           href={project.repoUrl}
                           target="_blank"
                           rel="noreferrer"
-                          onClick={(event) => event.stopPropagation()}
+                          onClick={(event) => {
+                            event.stopPropagation();
+                            trackEvent('project_repo_click', {
+                              project_id: project.id,
+                              project_title: project.title,
+                            });
+                          }}
                           className="px-3 py-2 bg-[var(--portfolio-soft)] text-black text-sm border-2 border-black hover:bg-[var(--portfolio-accent-mint)] transition-colors"
                         >
                           Voir le code

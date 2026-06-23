@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { HeroSection } from './sections/HeroSection';
 import { AboutSection } from './sections/AboutSection';
 import { TechMarquee } from './sections/TechMarquee';
@@ -7,9 +7,18 @@ import { SkillsSection } from './sections/SkillsSection';
 import { ContactSection } from './sections/ContactSection';
 import { SiteFooter } from './sections/SiteFooter';
 import { ProjectDetailsModal } from './modals/ProjectDetailsModal';
+import {
+  initializeAnalytics,
+  trackPageView,
+} from './lib/analytics';
 
 export default function App() {
   const [selectedProject, setSelectedProject] = useState<string | null>(null);
+
+  useEffect(() => {
+    initializeAnalytics();
+    trackPageView();
+  }, []);
 
   return (
     <div className="bg-[var(--portfolio-bg)] min-h-screen">

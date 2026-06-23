@@ -3,6 +3,7 @@ import { useInView } from 'motion/react';
 import { BadgeCheck, GraduationCap, Heart } from 'lucide-react';
 import ramataPhoto from 'figma:asset/Portrait Ramata.png';
 import { useRef } from 'react';
+import { trackEvent } from '../lib/analytics';
 
 const formationItems = [
  
@@ -109,6 +110,12 @@ export function AboutSection() {
                       href="https://github.com/Ramah409?tab=repositories"
                       target="_blank"
                       rel="noreferrer"
+                      onClick={() =>
+                        trackEvent('github_profile_click', {
+                          destination: 'github',
+                          section: 'about',
+                        })
+                      }
                       className="inline-block text-sm text-black/70 uppercase tracking-[0.25em] hover:text-black"
                     >
                       Voir mon GitHub
@@ -117,6 +124,12 @@ export function AboutSection() {
                       href="/documents/ramata-cv.pdf"
                       target="_blank"
                       rel="noreferrer"
+                      onClick={() =>
+                        trackEvent('cv_view_click', {
+                          destination: 'cv',
+                          section: 'about',
+                        })
+                      }
                       className="inline-block text-sm text-black/70 uppercase tracking-[0.25em] hover:text-black"
                     >
                       Voir mon CV

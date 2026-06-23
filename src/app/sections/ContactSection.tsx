@@ -7,6 +7,7 @@ import { Button } from '../components/ui/button';
 import { Input } from '../components/ui/input';
 import { Label } from '../components/ui/label';
 import { Textarea } from '../components/ui/textarea';
+import { trackEvent } from '../lib/analytics';
 
 const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xgobvwey';
 
@@ -130,6 +131,10 @@ export function ContactSection() {
         email: '',
         projectType: '',
         message: '',
+      });
+      trackEvent('contact_form_submit', {
+        form_name: 'portfolio_contact',
+        request_type: formPayload.get('projectType')?.toString() ?? 'unknown',
       });
       setSubmitState('success');
     } catch (error) {
@@ -303,6 +308,12 @@ export function ContactSection() {
                     </p>
                     <a
                       href={card.href}
+                      onClick={() =>
+                        trackEvent('contact_info_click', {
+                          contact_type: card.title.toLowerCase(),
+                          destination: card.href,
+                        })
+                      }
                       className="block text-black break-all hover:text-black/70"
                       aria-label={`${card.title} : ${card.value}`}
                       target={card.external ? '_blank' : undefined}
