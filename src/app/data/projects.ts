@@ -86,7 +86,7 @@ export const projects: PortfolioProject[] = [
     stack: ["HTML", "CSS", "JavaScript"],
     image: staticInterfaceImage,
     imageAlt: "Capture du projet interface e-commerce statique",
-    demoUrl: "file:///Users/ramah/Downloads/Mes%20projet/Test%20fronted%20Easy%20Tech%202/index.html",
+    demoUrl: "/projects/interface-ecommerce/index.html",
     repoUrl: "",
     rotation: -2,
     status: "Projet front-end",

@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Interface e-commerce statique</title>
+    <meta
+      name="description"
+      content="Projet front-end en HTML, CSS et JavaScript autour d'une boutique de montres et accessoires."
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="/">
+        <span class="brand-mark"></span>
+        <span>Easy Time</span>
+      </a>
+      <nav class="nav">
+        <a href="#collections">Collections</a>
+        <a href="#favorites">Favoris</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <a class="back-link" href="/">Retour au portfolio</a>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">Projet front-end • HTML • CSS • JavaScript</p>
+          <h1>Une interface e-commerce élégante pour une marque de montres.</h1>
+          <p class="lead">
+            Ce projet met l'accent sur l'intégration visuelle, la hiérarchie des contenus et
+            l'expérience utilisateur. J'ai travaillé une page d'accueil claire, des catégories
+            lisibles et une navigation simple pour présenter une boutique en ligne fictive.
+          </p>
+
+          <div class="hero-actions">
+            <a class="primary-btn" href="#collections">Découvrir la boutique</a>
+            <button class="secondary-btn" id="toggleTheme" type="button">Changer l'ambiance</button>
+          </div>
+
+          <div class="stats">
+            <article>
+              <strong>HTML</strong>
+              <span>Structure</span>
+            </article>
+            <article>
+              <strong>CSS</strong>
+              <span>Design responsive</span>
+            </article>
+            <article>
+              <strong>JS</strong>
+              <span>Interactions simples</span>
+            </article>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <img src="./cover.png" alt="Aperçu du projet e-commerce statique" />
+        </div>
+      </section>
+
+      <section class="section" id="collections">
+        <div class="section-head">
+          <p class="eyebrow">Collections</p>
+          <h2>Des modèles pensés pour une vitrine claire et moderne.</h2>
+        </div>
+
+        <div class="filters" role="tablist" aria-label="Filtres de collections">
+          <button class="filter active" data-filter="all" type="button">Tout voir</button>
+          <button class="filter" data-filter="montres" type="button">Montres</button>
+          <button class="filter" data-filter="bijoux" type="button">Bijoux</button>
+          <button class="filter" data-filter="accessoires" type="button">Accessoires</button>
+        </div>
+
+        <div class="products" id="productGrid">
+          <article class="product-card" data-category="montres">
+            <span class="badge">Nouveau</span>
+            <h3>Montre Aurora</h3>
+            <p>Boîtier acier, cadran clair et allure minimaliste.</p>
+            <div class="price-row">
+              <strong>89 €</strong>
+              <button type="button" class="mini-btn" data-add>Ajouter</button>
+            </div>
+          </article>
+
+          <article class="product-card" data-category="bijoux">
+            <span class="badge">Best-seller</span>
+            <h3>Bracelet Lune</h3>
+            <p>Une pièce discrète pour compléter la tenue au quotidien.</p>
+            <div class="price-row">
+              <strong>34 €</strong>
+              <button type="button" class="mini-btn" data-add>Ajouter</button>
+            </div>
+          </article>
+
+          <article class="product-card" data-category="accessoires">
+            <span class="badge">Édition limitée</span>
+            <h3>Boîte de rangement</h3>
+            <p>Un support élégant pour protéger ses pièces préférées.</p>
+            <div class="price-row">
+              <strong>49 €</strong>
+              <button type="button" class="mini-btn" data-add>Ajouter</button>
+            </div>
+          </article>
+
+          <article class="product-card" data-category="montres">
+            <span class="badge">Classique</span>
+            <h3>Montre Olive</h3>
+            <p>Un style intemporel avec une touche naturelle et douce.</p>
+            <div class="price-row">
+              <strong>112 €</strong>
+              <button type="button" class="mini-btn" data-add>Ajouter</button>
+            </div>
+          </article>
+
+          <article class="product-card" data-category="bijoux">
+            <span class="badge">Tendance</span>
+            <h3>Collier Atlas</h3>
+            <p>Une ligne fine pour une présentation sobre et raffinée.</p>
+            <div class="price-row">
+              <strong>58 €</strong>
+              <button type="button" class="mini-btn" data-add>Ajouter</button>
+            </div>
+          </article>
+
+          <article class="product-card" data-category="accessoires">
+            <span class="badge">Pratique</span>
+            <h3>Chiffon premium</h3>
+            <p>Un accessoire simple pour l'entretien des surfaces brillantes.</p>
+            <div class="price-row">
+              <strong>12 €</strong>
+              <button type="button" class="mini-btn" data-add>Ajouter</button>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section split" id="favorites">
+        <div class="info-panel">
+          <p class="eyebrow">Ce que montre le projet</p>
+          <h2>Une structure claire, visuelle et facile à parcourir.</h2>
+          <p>
+            L'objectif était de travailler une interface d'accueil proche d'une boutique réelle :
+            un hero impactant, des catégories visibles, des fiches produits simples et une mise en
+            page lisible sur mobile.
+          </p>
+        </div>
+
+        <div class="cart-panel">
+          <p class="eyebrow">Interaction JavaScript</p>
+          <h3>Panier de démonstration</h3>
+          <p id="cartCount">0 article ajouté</p>
+          <button class="secondary-btn" id="resetCart" type="button">Réinitialiser</button>
+        </div>
+      </section>
+
+      <section class="section" id="contact">
+        <div class="cta-box">
+          <div>
+            <p class="eyebrow">Projet personnel</p>
+            <h2>Un exercice pour montrer ma logique d'intégration front-end.</h2>
+          </div>
+          <a class="primary-btn" href="/">Revenir au portfolio</a>
+        </div>
+      </section>
+    </main>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
