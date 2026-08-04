@@ -1,172 +1,198 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Interface e-commerce statique</title>
-    <meta
-      name="description"
-      content="Projet front-end en HTML, CSS et JavaScript autour d'une boutique de montres et accessoires."
-    />
-    <link rel="stylesheet" href="./styles.css" />
-  </head>
-  <body>
-    <header class="topbar">
-      <a class="brand" href="/">
-        <span class="brand-mark"></span>
-        <span>Easy Time</span>
-      </a>
-      <nav class="nav">
-        <a href="#collections">Collections</a>
-        <a href="#favorites">Favoris</a>
-        <a href="#contact">Contact</a>
-      </nav>
-      <a class="back-link" href="/">Retour au portfolio</a>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Milliardstore - Montres intemporelles</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!--mon header-->
+    <header class="navbar">
+        <!--mes logo qui vont etre situer a gauches-->
+         <div class="nav-left">
+        <div class="logo">
+            <img src="logo/logo1.png" alt="logo du site">
+        </div>
+        <!--menu de navigation -->
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#accueil">ACCUEIL</a></li>
+                <li><a href="#montres">MONTRES</a></li>
+                <li><a href="#accessoires">BIJOUX ACCESSOIRES</a></li>
+                <li><a href="#apropos">À PROPOS</a></li>
+            </ul>
+        </nav>
+    </div>
+
+        <!--mes icones plus la barre de recherche et le panier-->
+        <div class="nav-icons">
+            <a href="#recherche"><img src="icone/Search.png" alt="recherche"></a>
+            <a href="#panier"><img src="icone/shopping bag.png" alt="panier"></a>
+            <a href="#profil"><img src="icone/image 17.png" alt="profil"></a>
+        </div>
+
     </header>
 
-    <main>
-      <section class="hero">
-        <div class="hero-copy">
-          <p class="eyebrow">Projet front-end • HTML • CSS • JavaScript</p>
-          <h1>Une interface e-commerce élégante pour une marque de montres.</h1>
-          <p class="lead">
-            Ce projet met l'accent sur l'intégration visuelle, la hiérarchie des contenus et
-            l'expérience utilisateur. J'ai travaillé une page d'accueil claire, des catégories
-            lisibles et une navigation simple pour présenter une boutique en ligne fictive.
-          </p>
-
-          <div class="hero-actions">
-            <a class="primary-btn" href="#collections">Découvrir la boutique</a>
-            <button class="secondary-btn" id="toggleTheme" type="button">Changer l'ambiance</button>
-          </div>
-
-          <div class="stats">
-            <article>
-              <strong>HTML</strong>
-              <span>Structure</span>
-            </article>
-            <article>
-              <strong>CSS</strong>
-              <span>Design responsive</span>
-            </article>
-            <article>
-              <strong>JS</strong>
-              <span>Interactions simples</span>
-            </article>
-          </div>
+    <!--mon bloc-1-->
+    <!--banner-->
+    <section class="banner">
+        <img src="image/Banner 2.jpg" alt="Banner montres" class="banner-img">
+        <div class="banner-content">
+            <!--sous titre-->
+            <h2>Style Intemporel</h2>
+            <h1>Milliardstore Montres qui ne se démondent jamais</h1>
+            <p>Printemps - Été 2025</p>
+            <a href="#categories" class="btn">Découvrez → </a>
         </div>
 
-        <div class="hero-visual">
-          <img src="./cover.png" alt="Aperçu du projet e-commerce statique" />
-        </div>
-      </section>
-
-      <section class="section" id="collections">
-        <div class="section-head">
-          <p class="eyebrow">Collections</p>
-          <h2>Des modèles pensés pour une vitrine claire et moderne.</h2>
-        </div>
-
-        <div class="filters" role="tablist" aria-label="Filtres de collections">
-          <button class="filter active" data-filter="all" type="button">Tout voir</button>
-          <button class="filter" data-filter="montres" type="button">Montres</button>
-          <button class="filter" data-filter="bijoux" type="button">Bijoux</button>
-          <button class="filter" data-filter="accessoires" type="button">Accessoires</button>
-        </div>
-
-        <div class="products" id="productGrid">
-          <article class="product-card" data-category="montres">
-            <span class="badge">Nouveau</span>
-            <h3>Montre Aurora</h3>
-            <p>Boîtier acier, cadran clair et allure minimaliste.</p>
-            <div class="price-row">
-              <strong>89 €</strong>
-              <button type="button" class="mini-btn" data-add>Ajouter</button>
+    </section>
+    <!--mon bloc 2 de categories-->
+    <!--ma premiere section-->
+    <section id="categories" class="categories">
+        <h2>VOTRE GROSSISTE DE MONTRES EN LIGNE </h2>
+        <p style="letter-spacing: 2px;">Sur milliardstore.com, explorez plus de 30 000 montres et accessoires pour célébrer vos moments les plus précieux :
+            fiançailles, mariage, naissance ou baptême. Trouvez la montre parfaite, ainsi que des bagues, bracelets, colliers et pendentifs.
+        </p>
+        <!--conteneur des categories-->
+        <div class="category-list">
+            <div class="category-item">
+                <img src="image/montre pour femme.jpg" alt="Montre femmes">
+                <h3>Montres pour femmes →</h3>
             </div>
-          </article>
-
-          <article class="product-card" data-category="bijoux">
-            <span class="badge">Best-seller</span>
-            <h3>Bracelet Lune</h3>
-            <p>Une pièce discrète pour compléter la tenue au quotidien.</p>
-            <div class="price-row">
-              <strong>34 €</strong>
-              <button type="button" class="mini-btn" data-add>Ajouter</button>
+            <div class="category-item">
+                <img src="image/Montres pour enfants.jpg" alt="Montre enfants">
+                <h3>Montres pour enfants →</h3>
             </div>
-          </article>
-
-          <article class="product-card" data-category="accessoires">
-            <span class="badge">Édition limitée</span>
-            <h3>Boîte de rangement</h3>
-            <p>Un support élégant pour protéger ses pièces préférées.</p>
-            <div class="price-row">
-              <strong>49 €</strong>
-              <button type="button" class="mini-btn" data-add>Ajouter</button>
+            <div class="category-item">
+                <img src="image/Montres pour hommes.jpg" alt="Montre hommes">
+                <h3>Montres pour hommes →</h3>
             </div>
-          </article>
-
-          <article class="product-card" data-category="montres">
-            <span class="badge">Classique</span>
-            <h3>Montre Olive</h3>
-            <p>Un style intemporel avec une touche naturelle et douce.</p>
-            <div class="price-row">
-              <strong>112 €</strong>
-              <button type="button" class="mini-btn" data-add>Ajouter</button>
+            <div class="category-item">
+                <img src="image/Montres connectées.jpg" alt="Montre connectées">
+                 <h3>Montres connectées →</h3>
             </div>
-          </article>
-
-          <article class="product-card" data-category="bijoux">
-            <span class="badge">Tendance</span>
-            <h3>Collier Atlas</h3>
-            <p>Une ligne fine pour une présentation sobre et raffinée.</p>
-            <div class="price-row">
-              <strong>58 €</strong>
-              <button type="button" class="mini-btn" data-add>Ajouter</button>
+            <div class="category-item">
+                <img src="image/Montres spéciales.jpg" alt="Montres spéciales">
+                <h3>Montres spéciales →</h3>
             </div>
-          </article>
-
-          <article class="product-card" data-category="accessoires">
-            <span class="badge">Pratique</span>
-            <h3>Chiffon premium</h3>
-            <p>Un accessoire simple pour l'entretien des surfaces brillantes.</p>
-            <div class="price-row">
-              <strong>12 €</strong>
-              <button type="button" class="mini-btn" data-add>Ajouter</button>
-            </div>
-          </article>
+ 
         </div>
-      </section>
+    </section>
 
-      <section class="section split" id="favorites">
-        <div class="info-panel">
-          <p class="eyebrow">Ce que montre le projet</p>
-          <h2>Une structure claire, visuelle et facile à parcourir.</h2>
-          <p>
-            L'objectif était de travailler une interface d'accueil proche d'une boutique réelle :
-            un hero impactant, des catégories visibles, des fiches produits simples et une mise en
-            page lisible sur mobile.
-          </p>
+    <!--section 2 de bloc 3-->
+    <section class="collections">
+        <div class="collection">
+            <img src="image/Collection.jpg" alt="collection montres">
+           
+            <h3>Montres</h3>
+            <a href="#decouvre" class="btn">JE DÉCOUVRE →</a>
+        </div>
+        <div class="collection">
+            <img src="image/Collection BIJOUX ACCESSOIRES.jpg" alt="collection bijoux">
+           
+            <h3>BIJOUX ACCESSOIRES</h3>
+            <a href="#decouvre" class="btn">JE DÉCOUVRE →</a>
+        </div>
+    </section>
+
+    <!--section 3 bloc 4 -->
+    <section class="rassurance">
+
+        <!--mon bloc 1-->
+        <div class="rassurance-item">
+            <img src="image/Livraison Rapide.svg" alt="livraison rapide">
+            <h4>Livraison rapide</h4>
+            <p>Recevez vos commandes rapidement grâce à notre service de livraison express, partout en France.</p>  
         </div>
 
-        <div class="cart-panel">
-          <p class="eyebrow">Interaction JavaScript</p>
-          <h3>Panier de démonstration</h3>
-          <p id="cartCount">0 article ajouté</p>
-          <button class="secondary-btn" id="resetCart" type="button">Réinitialiser</button>
+        <!--bloc 2-->
+        <div class="rassurance-item">
+            <img src="image/Paiement securise.svg" alt="paiments sécurisé">
+            <h4>Paiment sécurisé</h4>
+            <p>Achetez en toute confiance avec notre système de paiement sécurisé.</p>
         </div>
-      </section>
 
-      <section class="section" id="contact">
-        <div class="cta-box">
-          <div>
-            <p class="eyebrow">Projet personnel</p>
-            <h2>Un exercice pour montrer ma logique d'intégration front-end.</h2>
-          </div>
-          <a class="primary-btn" href="/">Revenir au portfolio</a>
+        <!--bloc 3-->
+        <div class="rassurance-item">
+            <img src="image/Meilleure qualité.svg" alt="meilleur qualité">
+            <h3>Meilleur qualité</h3>
+            <p>Profitez de la qualité exceptionnelle de nos produits, sélectionnés avec soin.</p>
         </div>
-      </section>
-    </main>
 
-    <script src="./script.js"></script>
-  </body>
+    </section>
+
+    <!--Mon footer -->
+    <footer class="footer">
+        <!--ma section newsletter-->
+        <div class="newsletter">
+
+            <label for="email">NEWSLETTER:</label>
+            <input type="email" id="email" placeholder="Entrez votre email">
+
+            <!--button pour s'incrire-->
+            <button>REJOIGNEZ-NOUS</button> 
+        </div>
+
+        <!--ma partie principales-->
+        <div class="footer-content">
+            <!-- colonne 1 presentation de la marque-->
+            <div class="footer-col">
+                <h2 class="logo"><img src="logo/logo2.jpg" alt="logo du site"></h2>
+                <p style="letter-spacing: 1px;">Découvrez l'élégance intemporelle de Milliardstore et laissez-vous séduire par notre collection exclusive de montres.</p>
+            </div>
+
+            <!--2 colonne les produits -->
+            <div class="footer-col">
+                <h4>Nos Produits </h4>
+                <ul>
+                    <li><a href="#femmes">Montres pour femmes</a></li>
+                    <li><a href="#hommes">Montres pour hommes</a></li>
+                    <li><a href="#enfants">Montres pour enfants</a></li>
+                    <li><a href="#mecaniques">Montres mécaniques</a></li>
+                    <li><a href="#spéciales">Montres spéciales</a></li>
+                    <li><a href="#connectée">Montres connectées</a></li>
+                </ul>
+            </div>
+            <!--3 colonnes les infos-->
+                <div class="footer-col">
+                    <h4>Informations</h4>
+                    <ul>
+                        <li><a href="#apropos"> À propos de nous</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                        <li><a href="#contact">Contactez-nous</a></li>
+                        <li><a href="cgv">CGV</a></li>
+                        <li><a href="confidentiels">Politique de confidentialité</a></li>
+                        <li><a href="cookies">Politique de Cookies</a></li>
+                    </ul>
+                </div>
+
+                <!--4 colonne contact-->
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <p>Adresse: 204 Rue de la Haie Coq, 93300 Aubervilliers France</p>
+                    <p>Téléphone: +33 01 31 61 51</p>
+                    <p>Horaires: Toute la semaine de 9h00 à 19h00, sauf le dimanche</p>
+                    <p>Email: service.easystore@gmail.com</p>
+                </div>
+
+        </div>
+
+        <!--bas du footer genre le mode de paiment et le copyright-->
+            <div class="footer-bottom">
+                <p>Milliardstore.com 2025 . All Rights Reserved</p>
+
+                <!--les icones de cartes de paiments-->
+                <!--j'ai essayer d'ajouter des icones sur le dossier image-->
+                <div class="payments">
+                    <img src="image/image 25.png" alt="visa">
+                    <img src="image/image 26.png" alt="mastecart">
+                </div>
+            </div>
+    </footer>
+
+    <!--Pour relier mon fichier javascript-->
+    <script src="script.js"></script>
+    
+</body>
 </html>

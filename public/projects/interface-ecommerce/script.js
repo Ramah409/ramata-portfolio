@@ -1,51 +1,81 @@
-const filters = document.querySelectorAll('.filter');
-const cards = document.querySelectorAll('.product-card');
-const addButtons = document.querySelectorAll('[data-add]');
-const cartCount = document.getElementById('cartCount');
-const resetCart = document.getElementById('resetCart');
-const toggleTheme = document.getElementById('toggleTheme');
 
-let count = 0;
+// Ici genre on sélectionne le bouton "Découvrez" dans le banner
+const btnDiscover = document.querySelector('.banner .btn');
 
-const updateCartText = () => {
-  cartCount.textContent = count <= 1 ? `${count} article ajouté` : `${count} articles ajoutés`;
-};
-
-filters.forEach((filter) => {
-  filter.addEventListener('click', () => {
-    const value = filter.dataset.filter;
-
-    filters.forEach((btn) => btn.classList.remove('active'));
-    filter.classList.add('active');
-
-    cards.forEach((card) => {
-      const visible = value === 'all' || card.dataset.category === value;
-      card.style.display = visible ? 'block' : 'none';
-    });
+// Quand on clique sur ce bouton ca nous ramene directement 
+btnDiscover.addEventListener('click', function(event) {
+  // Pour empêche que le lien recharge la page
+  event.preventDefault(); 
+  document.querySelector('#categories').scrollIntoView({
+    // Fait défiler la page doucement
+    behavior: 'smooth' 
   });
 });
+//  la bannière et de l'image
+const banner = document.querySelector('.banner');
+const bannerImg = banner.querySelector('.banner-img');
 
-addButtons.forEach((button) => {
-  button.addEventListener('click', () => {
-    count += 1;
-    updateCartText();
-    button.textContent = 'Ajouté';
-    window.setTimeout(() => {
-      button.textContent = 'Ajouter';
-    }, 1000);
-  });
+// Les images du slider
+const images = [
+  'image/Montres pour hommes.jpg',
+  'image/Montres pour enfants.jpg',
+  'image/Montres pour femmes.jpg'
+];
+// mon image actuelle
+let currentIndex = 0; 
+
+// Pour Ajouter une transition en fondu
+bannerImg.style.transition = 'opacity 0.5s ease';
+bannerImg.style.opacity = 1;
+
+// Creation de mes flèches 
+const leftArrow = document.createElement('div');
+const rightArrow = document.createElement('div');
+// flèche gauche
+leftArrow.innerHTML = '&#10094;'; 
+// flèche droite
+rightArrow.innerHTML = '&#10095;'; 
+
+// Modification de mes flèchess
+[leftArrow, rightArrow].forEach(arrow => {
+  arrow.style.position = 'absolute';
+  arrow.style.top = '50%';
+  arrow.style.transform = 'translateY(-50%)';
+  arrow.style.fontSize = '1rem';
+  arrow.style.color = '#fff';
+  arrow.style.cursor = 'pointer';
+  arrow.style.userSelect = 'none';
+  arrow.style.padding = '10px';
+  arrow.style.backgroundColor = 'rgba(34, 33, 33, 0.3)';
+  arrow.style.borderRadius = '50%';
+  arrow.style.zIndex = '1000';
 });
 
-resetCart.addEventListener('click', () => {
-  count = 0;
-  updateCartText();
-  addButtons.forEach((button) => {
-    button.textContent = 'Ajouter';
-  });
+leftArrow.style.left = '10px';
+rightArrow.style.right = '10px';
+
+// Ajouter des flèches à la bannière
+banner.appendChild(leftArrow);
+banner.appendChild(rightArrow);
+
+function showImage(index) {
+  bannerImg.style.opacity = 0; 
+
+  setTimeout(() => {
+    // changement de l'image
+    bannerImg.src = images[index]; 
+    bannerImg.style.opacity = 1;   
+  }, 300); 
+}
+
+//  Gestion des clics
+leftArrow.addEventListener('click', () => {
+  currentIndex = (currentIndex - 1 + images.length) % images.length;
+  showImage(currentIndex);
 });
 
-toggleTheme.addEventListener('click', () => {
-  document.body.classList.toggle('dark');
+rightArrow.addEventListener('click', () => {
+  currentIndex = (currentIndex + 1) % images.length;
+  showImage(currentIndex);
 });
 
-updateCartText();
