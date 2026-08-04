@@ -338,12 +338,12 @@ export function ContactSection() {
               <motion.div
                 animate={{ rotate: [0, 5, -5, 0] }}
                 transition={{ duration: 2, repeat: Infinity }}
-                className="w-24 sm:w-28 aspect-[3/4] bg-white border-4 border-black rounded-2xl shadow-lg overflow-hidden p-1"
+                className="w-24 sm:w-28 aspect-[3/4] bg-white border-4 border-black rounded-2xl shadow-lg overflow-hidden"
               >
                 <img
                   src={ramataPhoto}
                   alt="Photo de Ramata SISSOKO"
-                  className="w-full h-full object-contain rounded-xl bg-[var(--portfolio-soft)]"
+                  className="w-full h-full object-cover object-center rounded-[0.9rem] bg-[var(--portfolio-soft)]"
                 />
               </motion.div>
             </div>

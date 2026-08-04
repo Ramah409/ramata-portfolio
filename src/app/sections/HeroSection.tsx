@@ -131,11 +131,11 @@ export function HeroSection() {
             animate={{ y: [0, -10, 0] }}
             transition={{ duration: 2, repeat: Infinity }}
           >
-            <div className="w-44 md:w-52 aspect-[3/5] bg-white border-4 border-black shadow-lg rounded-[1.75rem] p-2 overflow-hidden">
+            <div className="w-44 md:w-52 aspect-[3/5] bg-white border-4 border-black shadow-lg rounded-[1.75rem] overflow-hidden">
               <img
                 src={ramataPhoto}
                 alt="Photo de Ramata SISSOKO"
-                className="w-full h-full rounded-[1.1rem] object-contain bg-[var(--portfolio-photo-bg)]"
+                className="w-full h-full rounded-[1.5rem] object-cover object-center bg-[var(--portfolio-photo-bg)]"
               />
             </div>
           </motion.div>

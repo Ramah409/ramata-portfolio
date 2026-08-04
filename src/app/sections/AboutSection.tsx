@@ -91,11 +91,11 @@ export function AboutSection() {
               <div className="absolute -top-3 -left-3 w-16 h-8 bg-[var(--portfolio-tape)] border border-[var(--portfolio-tape-border)] transform rotate-45" />
 
               <div className="aspect-square bg-[var(--portfolio-soft)] border-2 border-black rounded-lg flex flex-col items-center justify-center relative overflow-hidden p-6">
-                <div className="w-full max-w-[17rem] aspect-[3/5] border-4 border-black bg-white shadow-lg rounded-[1.75rem] overflow-hidden p-2">
+                <div className="w-full max-w-[17rem] aspect-[3/5] border-4 border-black bg-white shadow-lg rounded-[1.75rem] overflow-hidden">
                   <img
                     src={ramataPhoto}
                     alt="Photo de Ramata SISSOKO"
-                    className="w-full h-full object-contain rounded-[1.1rem] bg-[var(--portfolio-photo-bg)]"
+                    className="w-full h-full object-cover object-center rounded-[1.5rem] bg-[var(--portfolio-photo-bg)]"
                   />
                 </div>
 

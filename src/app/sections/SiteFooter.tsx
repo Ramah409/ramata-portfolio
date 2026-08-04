@@ -19,11 +19,11 @@ export function SiteFooter() {
 
           {/* Monogramme */}
           <div className="flex items-center gap-3">
-            <div className="w-12 h-14 bg-white border-2 border-white rounded-xl overflow-hidden p-1">
+            <div className="w-12 h-14 bg-white border-2 border-white rounded-xl overflow-hidden">
               <img
                 src={ramataPhoto}
                 alt="Photo de Ramata SISSOKO"
-                className="w-full h-full object-contain rounded-lg bg-[#e5f4e7]"
+                className="w-full h-full object-cover object-center rounded-lg bg-[#e5f4e7]"
               />
             </div>
             <div>
