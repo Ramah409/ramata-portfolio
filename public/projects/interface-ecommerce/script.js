@@ -19,7 +19,7 @@ const bannerImg = banner.querySelector('.banner-img');
 const images = [
   'image/Montres pour hommes.jpg',
   'image/Montres pour enfants.jpg',
-  'image/Montres pour femmes.jpg'
+  'image/montre pour femme.jpg'
 ];
 // mon image actuelle
 let currentIndex = 0; 
@@ -78,4 +78,3 @@ rightArrow.addEventListener('click', () => {
   currentIndex = (currentIndex + 1) % images.length;
   showImage(currentIndex);
 });
-
