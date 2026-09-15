@@ -2,6 +2,7 @@ import ecommerceLogo from '../../assets/LOGO.png';
 import soramtfrLogo from '../../assets/soramtfr logo.png';
 import staticInterfaceImage from '../../assets/Interface statique.png';
 import traceProjectImage from '../../assets/image.png';
+import teriyawebImage from '../../assets/teriyaweb-accueil.png';
 
 
 export type PortfolioProject = {
@@ -75,6 +76,33 @@ export const projects: PortfolioProject[] = [
       "Boutique construite avec WordPress et WooCommerce.",
       "Mise en page personnalisée avec Elementor et WoodMart.",
       "Gestion des produits, paiements, formulaires, cookies et maintenance.",
+    ],
+  },
+  {
+    id: "Boutique e-commerce – Teriya Web",
+    title: "Boutique e-commerce WordPress",
+    subtitle: "Site vitrine et boutique en ligne pour une activité freelance",
+    description:
+      "Site professionnel pour une activité de création de sites WordPress, alliant vitrine (accueil, services, réalisations, à propos, contact) et boutique en ligne WooCommerce fonctionnelle : 7 formules en vente, paiement par carte via Stripe, espace client avec inscription/connexion et suivi de commandes, ainsi qu'un espace de suivi de projet personnalisé pour chaque client.",
+    stack: ["WordPress", "Astra", "Elementor", "WooCommerce", "Stripe", "Yoast SEO", "Tidio", "WPForms"],
+    image: teriyawebImage,
+    imageAlt: "Capture de la page d'accueil de Teriya Web",
+    demoUrl: "https://teriyaweb.com/",
+    rotation: 2,
+    status: "Projet CMS",
+    coverFrom: "#f6efe7",
+    coverTo: "#c98f6f",
+    objectifs: [
+      "Créer un site vitrine et une boutique en ligne pour une activité de création de sites WordPress.",
+      "Mettre en place un tunnel d'achat complet avec WooCommerce et un paiement sécurisé par carte via Stripe.",
+      "Offrir à chaque client un espace personnel de suivi de projet, avec documents privés et messagerie.",
+    ],
+    pointsCles: [
+      "Site construit avec WordPress, Astra et Elementor, 7 formules en vente de 20 € à 1 200 €.",
+      "Paiement par carte et Apple Pay via Stripe (compte réel connecté), panier et codes promo.",
+      "Espace client avec inscription/connexion, page « Mon compte » personnalisée et suivi de commandes.",
+      "Chat en ligne (Tidio), formulaire de contact (WPForms) et SEO optimisé (Yoast) sur toutes les pages.",
+      "Design responsive aux couleurs de la marque (beige/terracotta), polices Syne et Plus Jakarta Sans.",
     ],
   },
   {
