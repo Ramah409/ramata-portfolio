@@ -79,9 +79,9 @@ export const projects: PortfolioProject[] = [
     ],
   },
   {
-    id: "Site vitrine et boutique – Teriya Web",
-    title: "Site vitrine et boutique en ligne",
-    subtitle: "Site vitrine avec boutique e-commerce intégrée, pour une activité freelance",
+    id: "Site vitrine – Teriya Web",
+    title: "Site vitrine",
+    subtitle: "Site vitrine pour une activité freelance de création de sites WordPress",
     description:
       "Site professionnel pour une activité de création de sites WordPress, alliant vitrine (accueil, services, réalisations, à propos, contact) et boutique en ligne WooCommerce fonctionnelle : 7 formules en vente, paiement par carte via Stripe, espace client avec inscription/connexion et suivi de commandes, ainsi qu'un espace de suivi de projet personnalisé pour chaque client.",
     stack: ["WordPress", "Astra", "Elementor", "WooCommerce", "Stripe", "Yoast SEO", "Tidio", "WPForms"],
